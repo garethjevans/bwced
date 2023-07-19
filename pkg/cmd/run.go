@@ -2,9 +2,10 @@ package cmd
 
 import (
 	"fmt"
+	"net/http"
+
 	"github.com/garethjevans/bwced/pkg/bwced"
 	"github.com/spf13/cobra"
-	"net/http"
 )
 
 var (

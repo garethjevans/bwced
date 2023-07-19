@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/garethjevans/bwced/pkg/cmd"
 	"os"
 	"runtime/debug"
 	"strings"
+
+	"github.com/garethjevans/bwced/pkg/cmd"
 
 	"github.com/garethjevans/bwced/pkg/version"
 	"github.com/sirupsen/logrus"
