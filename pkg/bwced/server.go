@@ -4,13 +4,14 @@ import (
 	"crypto/sha1"
 	"errors"
 	"fmt"
-	"github.com/sirupsen/logrus"
 	"io"
 	"net/http"
 	"os"
 	"path"
 	"regexp"
 	"strings"
+
+	"github.com/sirupsen/logrus"
 )
 
 var (
@@ -18,7 +19,7 @@ var (
 	rePathFiles  = regexp.MustCompile(`^/files/([^/]+)$`)
 
 	//errTokenMismatch = errors.New("token mismatched")
-	//errMissingToken  = errors.New("missing token")
+	//errMissingToken  = errors.New("missing token").
 )
 
 // Server represents a simple-upload server.
@@ -32,7 +33,7 @@ type Server struct {
 }
 
 // NewServer creates a new simple-upload server.
-// func NewServer(documentRoot string, maxUploadSize int64, token string, enableCORS bool, protectedMethods []string) Server {
+// func NewServer(documentRoot string, maxUploadSize int64, token string, enableCORS bool, protectedMethods []string) Server {.
 func NewServer(documentRoot string, maxUploadSize int64, enableCORS bool, protectedMethods []string) Server {
 	if logger == nil {
 		logger = logrus.StandardLogger()

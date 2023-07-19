@@ -32,7 +32,7 @@ func newErrorResponse(err error) errorResponse {
 func writeError(w http.ResponseWriter, err error) (int, error) {
 	body := newErrorResponse(err)
 	b, e := json.Marshal(body)
-	// if an error is occured on marshaling, write empty value as response.
+	// if an error is occurred on marshaling, write empty value as response.
 	if e != nil {
 		return w.Write([]byte{})
 	}
@@ -42,7 +42,7 @@ func writeError(w http.ResponseWriter, err error) (int, error) {
 func writeSuccess(w http.ResponseWriter, path string) (int, error) {
 	body := newUploadedResponse(path)
 	b, e := json.Marshal(body)
-	// if an error is occured on marshaling, write empty value as response.
+	// if an error is occurred on marshaling, write empty value as response.
 	if e != nil {
 		return w.Write([]byte{})
 	}

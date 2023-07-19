@@ -3,14 +3,15 @@ package bwced_test
 import (
 	"bufio"
 	"encoding/base64"
-	"github.com/garethjevans/bwced/pkg/bwced"
-	"github.com/stretchr/testify/assert"
 	"io"
 	"mime/multipart"
 	"net/http/httptest"
 	"os"
 	"path/filepath"
 	"testing"
+
+	"github.com/garethjevans/bwced/pkg/bwced"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestUploadImage(t *testing.T) {
