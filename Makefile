@@ -87,7 +87,7 @@ coverage:
 install: $(GO_DEPENDENCIES)
 	GOBIN=${GOPATH1}/bin $(GO) install $(BUILDFLAGS) cmd/$(NAME)/$(NAME).go
 
-get-fmt-deps: ## Install goimports
+get-fmt-deps: ## Install goimports.
 	$(GO_NOMOD) get golang.org/x/tools/cmd/goimports
 
 importfmt: get-fmt-deps
@@ -124,8 +124,11 @@ docs: build
 lint:
 	golangci-lint run --fix
 
-run: build ## Build and run the application locally
+run: build ## Build and run the application locally.
 	./build/bwced run
+
+install: ## Install onto the local k8s cluster.
+	kubectl apply -f resources/server-it.yaml
 
 # Absolutely awesome: http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 help: ## Print help for each make target
