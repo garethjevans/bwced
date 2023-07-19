@@ -42,6 +42,8 @@ taskrun.tekton.dev/bwced-kcfpz created
 ```
 
 ## Build this in TAP
+
+```shell
 tanzu apps workload create bwced \
   --namespace dev \
   --git-branch main \
@@ -51,3 +53,4 @@ tanzu apps workload create bwced \
   --param-yaml testing_pipeline_matching_labels='{"apps.tanzu.vmware.com/pipeline":"golang-pipeline"}' \
   --type web \
   --yes
+```
