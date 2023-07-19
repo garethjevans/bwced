@@ -1,0 +1,22 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  labels:
+    app.kubernetes.io/part-of: bwced
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+  name: bwced
+spec:
+  params:
+  - name: annotations
+    value:
+      garethjevans.org/args: '["run","--bind-address","0.0.0.0","--document-root","/storage"]'
+      garethjevans.org/storage: '{"volumeMounts":[{"mountPath":"/storage","name":"storage"}],"volumes":[{"name":"storage","emptyDir":{}}]}'
+  - name: testing_pipeline_matching_labels
+    value:
+      apps.tanzu.vmware.com/pipeline: golang-pipeline
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/garethjevans/bwced
