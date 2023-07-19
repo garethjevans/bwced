@@ -40,3 +40,14 @@ taskrun.tekton.dev/bwced-kcfpz created
 100    13  100    13    0     0   5922      0 --:--:-- --:--:-- --:--:--  6500
 [download] test content
 ```
+
+## Build this in TAP
+tanzu apps workload create bwced \
+  --namespace dev \
+  --git-branch main \
+  --git-repo https://github.com/garethjevans/bwced \
+  --label apps.tanzu.vmware.com/has-tests=true \
+  --label app.kubernetes.io/part-of=bwced \
+  --param-yaml testing_pipeline_matching_labels='{"apps.tanzu.vmware.com/pipeline":"golang-pipeline"}' \
+  --type web \
+  --yes
