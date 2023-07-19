@@ -22,6 +22,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Pack Build
-        uses: dfreilich/pack-action@v2
+        uses: dfreilich/pack-action@v2.1.1
         with:
           args: 'build garethjevans/bwced:latest --builder paketobuildpacks/builder:full --publish'
