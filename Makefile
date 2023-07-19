@@ -124,5 +124,10 @@ docs: build
 lint:
 	golangci-lint run --fix
 
-run: build
+run: build ## Build and run the application locally
 	./build/bwced run
+
+# Absolutely awesome: http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
+help: ## Print help for each make target
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+
