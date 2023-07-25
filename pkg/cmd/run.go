@@ -37,7 +37,7 @@ func NewRunCmd() *cobra.Command {
 
 	cmd.Flags().StringVarP(&BindAddress, "bind-address", "", "localhost", "The address to bind to (default: localhost)")
 	cmd.Flags().IntVarP(&Port, "port", "p", 8080, "The port to run the webserver on (default: 8080)")
-	cmd.Flags().Int64VarP(&MaxUploadSize, "max-upload-size", "", 1024, "The max upload size in bytes (default: 1024)")
+	cmd.Flags().Int64VarP(&MaxUploadSize, "max-upload-size", "", 10*1024*1024, "The max upload size in bytes (default: 10MB)")
 	cmd.Flags().BoolVarP(&EnableCORS, "enable-cors", "", false, "Whether to allow CORS requests (default: false)")
 	cmd.Flags().StringVarP(&DocumentRoot, "document-root", "d", "", "The root to store all documents")
 
